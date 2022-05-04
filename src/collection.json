@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "mongoose": {
+      "factory": "./lib/mongoose/mongoose.factory#main",
+      "description": "Mongoose based CRUD",
+      "schema": "./lib/mongoose/schema.json",
+      "aliases": ["mongo"]
+    }
+  }
+}
