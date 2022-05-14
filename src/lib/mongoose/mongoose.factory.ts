@@ -4,8 +4,10 @@ import {
   apply,
   branchAndMerge,
   chain,
+  filter,
   mergeWith,
   move,
+  noop,
   Rule,
   SchematicContext,
   SchematicsException,
@@ -70,10 +72,7 @@ function transform(options: MongooseOptions): MongooseOptions {
 function generate(options: MongooseOptions): Source {
   return (context: SchematicContext) =>
     apply(url(join('./files' as Path, options.language ?? '')), [
-      // filter(() => {
-      //   return true;
-      // }),
-      // options.spec ? noop() : filter((path) => !path.endsWith('.spec.ts')),
+      options.schema ? noop() : filter((path) => !path.endsWith('.schema.ts')),
       template({
         ...strings,
         ...options,

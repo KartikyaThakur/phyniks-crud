@@ -42,7 +42,7 @@ export class <%= classify(name) %>Controller {
     async addOne(
         @Body() <%= singular(lowercased(name)) %>CreateDto: <%= singular(classify(name)) %>CreateDto, 
         @AuthUser('_id') createdBy: mongoose.Types.ObjectId,) {
-        const <%= singular(lowercased(name)) %>Object = {...<%= lowercased(name) %>CreateDto,createdBy }
+        const <%= singular(lowercased(name)) %>Object = {...<%= singular(lowercased(name)) %>CreateDto,createdBy }
         return this.<%= lowercased(name) %>Service.createOne(<%= singular(lowercased(name)) %>Object);
     }
 
@@ -51,7 +51,7 @@ export class <%= classify(name) %>Controller {
         @Param('id') id: mongoose.Types.ObjectId,
         @Body() <%= singular(lowercased(name)) %>UpdateDto: <%= singular(classify(name)) %>UpdateDto,
     ) {
-        return await this.<%= lowercased(name) %>Service.updateOneById(id, <%= lowercased(name) %>UpdateDto);
+        return await this.<%= lowercased(name) %>Service.updateOneById(id, <%= singular(lowercased(name)) %>UpdateDto);
     }
 
     @Delete(':id')
