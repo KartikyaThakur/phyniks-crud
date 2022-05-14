@@ -1,6 +1,6 @@
 {
   "name": "phyniks-crud",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CRUD generator by Phyniks",
   "main": "dist/index.js",
   "files": [
